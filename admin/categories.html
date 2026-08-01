@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories | Admin | Libas e Khas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+
+    <nav class="admin-sidebar">
+        <div class="sidebar-header"><img src="../assets/images/logo.png" alt="Libas e Khas" class="logo mb-2" style="max-height: 40px;"><span class="d-block small text-muted font-body">Boutique Admin</span></div>
+        <ul class="list-unstyled components font-body">
+            <p>MAIN NAVIGATION</p>
+            <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li><a href="orders.html"><i class="fas fa-shopping-cart"></i> Orders</a></li>
+            <li class="active">
+                <a href="#productSubmenu" data-bs-toggle="collapse" aria-expanded="true" class="dropdown-toggle"><i class="fas fa-tshirt"></i> Catalog</a>
+                <ul class="collapse list-unstyled show" id="productSubmenu">
+                    <li><a href="products.html" class="ps-5">Products</a></li>
+                    <li><a href="add-product.html" class="ps-5">Add Product</a></li>
+                    <li class="active"><a href="categories.html" class="ps-5">Categories</a></li>
+                </ul>
+            </li>
+            <li><a href="customers.html"><i class="fas fa-users"></i> Customers</a></li>
+            <li><a href="reviews.html"><i class="fas fa-star"></i> Reviews</a></li>
+            <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+        </ul>
+    </nav>
+
+    <div class="admin-content">
+        <div class="admin-topbar">
+            <button type="button" id="sidebarCollapse" class="sidebar-collapse"><i class="fas fa-bars"></i></button>
+            <div class="d-flex align-items-center gap-3">
+                <div class="dropdown">
+                    <a href="#" class="d-flex align-items-center text-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown">
+                        <img src="https://ui-avatars.com/api/?name=Admin+User&background=C5A059&color=fff" width="32" class="rounded-circle me-2">
+                        <span class="font-body fw-bold">Admin</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid p-4">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="font-heading mb-0">Categories</h2>
+                <button class="btn btn-dark font-body" data-bs-toggle="modal" data-bs-target="#addCategoryModal"><i class="fas fa-plus me-2"></i>Add Category</button>
+            </div>
+
+            <div class="bg-white p-4 rounded shadow-sm border-top border-3 border-gold">
+                <div class="table-responsive">
+                    <table class="table table-hover font-body align-middle datatable w-100">
+                        <thead class="table-light">
+                            <tr>
+                                <th>ID</th>
+                                <th>Image</th>
+                                <th>Category Name</th>
+                                <th>Description</th>
+                                <th>Total Products</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td><img src="https://images.unsplash.com/photo-1605763240000-7e93b172d754?q=80&w=600&auto=format&fit=crop" style="width: 40px; height: 40px; object-fit: cover; border-radius: 5px;"></td>
+                                <td><strong>Bridal Couture</strong></td>
+                                <td class="text-muted">Premium handcrafted bridal wear for the special day.</td>
+                                <td>15</td>
+                                <td><span class="badge bg-success">Active</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-outline-dark me-1"><i class="fas fa-edit"></i></button>
+                                    <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td><img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=1920&auto=format&fit=crop" style="width: 40px; height: 40px; object-fit: cover; border-radius: 5px;"></td>
+                                <td><strong>Luxury Pret</strong></td>
+                                <td class="text-muted">Ready to wear formals with exquisite detailing.</td>
+                                <td>42</td>
+                                <td><span class="badge bg-success">Active</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-outline-dark me-1"><i class="fas fa-edit"></i></button>
+                                    <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Category Modal -->
+    <div class="modal fade" id="addCategoryModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content rounded-0">
+                <div class="modal-header bg-dark text-white rounded-0">
+                    <h5 class="modal-title font-heading">Add New Category</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body font-body">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold small">Category Name</label>
+                            <input type="text" class="form-control rounded-0 border-dark shadow-none" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold small">Description</label>
+                            <textarea class="form-control rounded-0 border-dark shadow-none" rows="3"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold small">Category Image</label>
+                            <input class="form-control rounded-0 border-dark shadow-none" type="file">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer border-top-0">
+                    <button type="button" class="btn btn-outline-dark rounded-0 font-body" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary font-body">Save Category</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+    <script src="../js/admin.js"></script>
+</body>
+</html>

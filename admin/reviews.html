@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews | Admin | Libas e Khas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+    <nav class="admin-sidebar">
+        <div class="sidebar-header"><img src="../assets/images/logo.png" alt="Libas e Khas" class="logo mb-2" style="max-height: 40px;"><span class="d-block small text-muted font-body">Boutique Admin</span></div>
+        <ul class="list-unstyled components font-body">
+            <p>MAIN NAVIGATION</p>
+            <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li><a href="orders.html"><i class="fas fa-shopping-cart"></i> Orders</a></li>
+            <li>
+                <a href="#productSubmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fas fa-tshirt"></i> Catalog</a>
+                <ul class="collapse list-unstyled" id="productSubmenu">
+                    <li><a href="products.html" class="ps-5">Products</a></li>
+                    <li><a href="add-product.html" class="ps-5">Add Product</a></li>
+                    <li><a href="categories.html" class="ps-5">Categories</a></li>
+                </ul>
+            </li>
+            <li><a href="customers.html"><i class="fas fa-users"></i> Customers</a></li>
+            <li class="active"><a href="reviews.html"><i class="fas fa-star"></i> Reviews</a></li>
+            <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+        </ul>
+    </nav>
+
+    <div class="admin-content">
+        <div class="admin-topbar">
+            <button type="button" id="sidebarCollapse" class="sidebar-collapse"><i class="fas fa-bars"></i></button>
+            <div class="d-flex align-items-center gap-3">
+                <div class="dropdown">
+                    <a href="#" class="d-flex align-items-center text-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown">
+                        <img src="https://ui-avatars.com/api/?name=Admin+User&background=C5A059&color=fff" width="32" class="rounded-circle me-2">
+                        <span class="font-body fw-bold">Admin</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid p-4">
+            <h2 class="font-heading mb-4">Product Reviews</h2>
+
+            <div class="bg-white p-4 rounded shadow-sm border-top border-3 border-gold">
+                <div class="table-responsive">
+                    <table class="table table-hover font-body align-middle datatable w-100">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Product</th>
+                                <th>Customer</th>
+                                <th>Rating</th>
+                                <th style="width: 30%;">Review</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&q=80&w=1920" class="me-2" style="width:40px; height:40px; object-fit:cover; border-radius:4px;">
+                                        <span>Zoya Chiffon</span>
+                                    </div>
+                                </td>
+                                <td>Sara Ahmed</td>
+                                <td class="text-gold"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></td>
+                                <td class="small text-muted">Absolutely gorgeous! The embroidery is so fine and exactly as shown.</td>
+                                <td>May 10, 2026</td>
+                                <td><span class="badge bg-success">Approved</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&q=80&w=1920" class="me-2" style="width:40px; height:40px; object-fit:cover; border-radius:4px;">
+                                        <span>Mahal Lehenga</span>
+                                    </div>
+                                </td>
+                                <td>Kiran Ali</td>
+                                <td class="text-gold"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></td>
+                                <td class="small text-muted">Beautiful color but the sizing was slightly loose for me.</td>
+                                <td>May 8, 2026</td>
+                                <td><span class="badge bg-warning text-dark">Pending</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-outline-success me-1"><i class="fas fa-check"></i></button>
+                                    <button class="btn btn-sm btn-outline-danger"><i class="fas fa-times"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+    <script src="../js/admin.js"></script>
+</body>
+</html>

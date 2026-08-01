@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Libas E Khas</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <style>
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 4rem auto;
+    }
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 1px;
+      background-color: var(--color-gold);
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -0.5px;
+    }
+    .timeline-item {
+      padding: 2rem 4rem;
+      position: relative;
+      width: 50%;
+    }
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      right: -7.5px;
+      background-color: var(--color-ivory);
+      border: 2px solid var(--color-gold);
+      top: 50%;
+      transform: translateY(-50%);
+      border-radius: 50%;
+      z-index: 1;
+    }
+    .timeline-left { left: 0; text-align: right; }
+    .timeline-right { left: 50%; }
+    .timeline-right::after {
+      left: -7.5px;
+    }
+    @media (max-width: 768px) {
+      .timeline::after { left: 31px; }
+      .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+        text-align: left;
+      }
+      .timeline-left { left: 0; }
+      .timeline-right { left: 0; }
+      .timeline-left::after, .timeline-right::after {
+        left: 23px;
+      }
+    }
+    .about-hero {
+      background-color: var(--color-nude);
+      padding: 6rem 0;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    Elegance Crafted for Your Most Beautiful Moments
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid px-4 px-lg-5">
+        
+        <!-- Mobile Toggle -->
+        <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Logo -->
+        <a class="navbar-brand" href="index.html">
+          <img src="assets/images/logo.png" alt="Libas E Khas">
+        </a>
+
+        <!-- Desktop Navigation & Mobile Offcanvas -->
+        <div class="offcanvas-lg offcanvas-start flex-grow-1" tabindex="-1" id="navbarMain" aria-labelledby="navbarMainLabel">
+          <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title" id="navbarMainLabel" style="font-family: var(--font-heading);">Menu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#navbarMain" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-center gap-4">
+            <li class="nav-item">
+              <a class="nav-link px-3" href="shop.html">Shop</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link px-3 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Bridal Wear
+              </a>
+              <ul class="dropdown-menu border-0 rounded-0 shadow-sm">
+                <li><a class="dropdown-item" href="shop.html">Walima Maxis</a></li>
+                <li><a class="dropdown-item" href="shop.html">Lehnga</a></li>
+                <li><a class="dropdown-item" href="shop.html">Adda / Dabka</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link px-3 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Party Wear
+              </a>
+              <ul class="dropdown-menu border-0 rounded-0 shadow-sm">
+                <li><a class="dropdown-item" href="shop.html">Fancy Shararas</a></li>
+                <li><a class="dropdown-item" href="shop.html">Ghararas</a></li>
+                <li><a class="dropdown-item" href="shop.html">Silk Shirts</a></li>
+                <li><a class="dropdown-item" href="shop.html">Lawn Suits</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-3" href="shop.html">Khuda Baksh Collection</a>
+            </li>
+            <li class="nav-item d-lg-none mt-3">
+              <a class="nav-link active" href="about.html">About Us</a>
+            </li>
+            <li class="nav-item d-lg-none">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item d-lg-none mt-2 border-top pt-2" style="border-color: #eaeaea !important;">
+              <a class="nav-link d-flex align-items-center gap-2" href="#">
+                <i class="far fa-user"></i> My Profile
+              </a>
+            </li>
+            <li class="nav-item d-lg-none">
+              <a class="nav-link d-flex align-items-center gap-2" href="#">
+                <i class="far fa-heart"></i> Wishlist
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Right Icons -->
+      <div class="nav-icons d-flex align-items-center">
+        <button class="btn btn-link text-decoration-none">
+            <i class="fas fa-search"></i>
+          </button>
+          <a href="#" class="btn btn-link text-decoration-none d-none d-md-inline-block">
+            <i class="far fa-user"></i>
+          </a>
+          <button class="btn btn-link text-decoration-none d-none d-md-inline-block">
+            <i class="far fa-heart"></i>
+          </button>
+          <button class="btn btn-link text-decoration-none position-relative" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas">
+            <i class="fas fa-shopping-bag"></i>
+            <span class="cart-count">0</span>
+          </button>
+        </div>
+        
+      </div>
+    </nav>
+  </header>
+
+  <section class="about-hero fade-up">
+    <div class="container">
+      <span class="label-small mb-3 d-inline-block">Heritage & Artistry</span>
+      <h1 class="heading-editorial">The Story Behind<br>Libas E Khas</h1>
+    </div>
+  </section>
+
+  <section class="py-5">
+    <div class="container">
+      <div class="row align-items-center mb-5 fade-up">
+        <div class="col-md-6 mb-4 mb-md-0">
+          <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&q=80&w=1920" class="img-fluid w-100" alt="Craftsmanship" style="object-fit: cover; aspect-ratio: 3/4;">
+        </div>
+        <div class="col-md-6 px-lg-5 text-center text-md-start">
+          <h2 class="heading-section mb-4">Our Philosophy</h2>
+          <p class="text-muted" style="font-size: 1.1rem; line-height: 1.8;">
+            Every garment tells a story. At Libas E Khas, we create pieces that honour tradition while embracing contemporary elegance. Our designs are a tribute to the rich cultural heritage of Pakistan, woven delicately into every thread, crystal, and embellishment.
+          </p>
+          <p class="text-muted mt-3" style="font-size: 1.1rem; line-height: 1.8;">
+            From luxurious bridals to sophisticated party wear, we believe in celebrating femininity through exquisite craftsmanship.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5 bg-white">
+    <div class="container text-center fade-up">
+      <h2 class="heading-section mb-5">The Journey of Elegance</h2>
+      
+      <div class="timeline">
+        <div class="timeline-item timeline-left fade-up">
+          <span class="label-small text-gold">Phase 01</span>
+          <h3 class="mt-2 mb-3" style="font-family: var(--font-heading);">Tradition</h3>
+          <p class="text-muted">Drawing inspiration from centuries-old Pakistani motifs, art, and architecture. We begin with a deep respect for our cultural roots.</p>
+        </div>
+        <div class="timeline-item timeline-right fade-up" style="transition-delay: 100ms;">
+          <span class="label-small text-gold">Phase 02</span>
+          <h3 class="mt-2 mb-3" style="font-family: var(--font-heading);">Craftsmanship</h3>
+          <p class="text-muted">Our artisans dedicate hundreds of hours to intricate Adda and Dabka work, ensuring every detail is perfectly executed by hand.</p>
+        </div>
+        <div class="timeline-item timeline-left fade-up" style="transition-delay: 200ms;">
+          <span class="label-small text-gold">Phase 03</span>
+          <h3 class="mt-2 mb-3" style="font-family: var(--font-heading);">Modern Elegance</h3>
+          <p class="text-muted">The final masterpiece brings together timeless techniques with contemporary silhouettes, creating fashion that transcends generations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cart Offcanvas (Shared) -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="cartOffcanvas">
+    <div class="offcanvas-header border-bottom border-light">
+      <h5 class="offcanvas-title" style="font-family: var(--font-heading);">Your Bag</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column" style="background-color: var(--color-ivory);">
+      <div id="cart-items" class="flex-grow-1 overflow-auto pe-2"></div>
+      <div class="cart-footer mt-4 border-top pt-3">
+        <div class="d-flex justify-content-between mb-3">
+          <span class="font-weight-bold" style="font-family: var(--font-body); font-weight: 500;">Subtotal</span>
+          <span id="cart-subtotal" class="font-weight-bold">PKR 0</span>
+        </div>
+        <a href="checkout.html" class="btn btn-primary w-100 py-3">Proceed to Checkout</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 pe-lg-5 text-center text-md-start">
+          <img src="assets/images/logo.png" alt="Libas E Khas" class="mb-3" style="max-width: 150px;">
+          <p class="">Luxury Pakistani fashion, crafted with heritage and presented with modern elegance.</p>
+        </div>
+        <div class="col-lg-2 col-md-6 mb-4 mb-lg-0 text-center text-md-start">
+          <h5>Shop</h5>
+          <ul>
+            <li><a href="shop.html">Bridal Wear</a></li>
+            <li><a href="shop.html">Party Wear</a></li>
+            <li><a href="shop.html">Khuda Baksh</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 text-center text-md-start">
+          <h5>Customer Care</h5>
+          <ul>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="#">Shipping Information</a></li>
+            <li><a href="#">Returns & Exchange</a></li>
+            <li><a href="#">Size Guide</a></li>
+            <li><a href="#">FAQs</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-6 text-center text-md-start">
+          <h5>Stay in the know.</h5>
+          <p>Be the first to discover new collections, exclusive pieces, and special announcements.</p>
+          <form class="newsletter-form d-flex mt-3">
+            <input type="email" class="form-control" placeholder="Enter your email" required>
+            <button class="btn btn-primary" type="submit">Subscribe</button>
+          </form>
+          <div class="mt-4 d-flex justify-content-center justify-content-md-start gap-4">
+            <a href="#" class="text-white social-icon"><i class="fab fa-instagram fs-4"></i></a>
+            <a href="#" class="text-white social-icon"><i class="fab fa-facebook fs-4"></i></a>
+            <a href="#" class="text-white social-icon"><i class="fab fa-whatsapp fs-4"></i></a>
+            <a href="#" class="text-white social-icon"><i class="fa-brands fa-tiktok fs-4"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 Libas E Khas. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+/* Responsive adjustments for Libas E Khas */
+
+@media (max-width: 1200px) {
+  .hero-content p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 991px) {
+  /* Tablet / iPad */
+  .heading-editorial {
+    font-size: 3rem;
+  }
+  .heading-section {
+    font-size: 2.2rem;
+  }
+  .category-card {
+    height: 400px;
+  }
+  
+  /* Mobile Menu Adjustments */
+  .navbar-collapse {
+    background-color: var(--color-ivory);
+    padding: 1rem;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    box-shadow: var(--shadow-subtle);
+    border-top: 1px solid var(--color-nude);
+  }
+  
+  .nav-link {
+    display: inline-block;
+    padding: 0.5rem 0;
+  }
+  
+  .navbar-toggler {
+    border: none;
+    padding: 0;
+  }
+  .navbar-toggler:focus {
+    box-shadow: none;
+  }
+  
+  /* Feature section */
+  .feature-box {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Mobile */
+  .hero-section {
+    min-height: 500px;
+    height: 70vh;
+  }
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  .hero-content p {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .category-card {
+    height: 350px;
+    margin-bottom: 1rem;
+  }
+  
+  .brand-statement .statement-text {
+    padding: 3rem 1rem;
+    text-align: center;
+  }
+  
+  .footer {
+    padding: 3rem 0 1.5rem;
+    text-align: center;
+  }
+  .footer h5 {
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Small Mobile */
+  .product-img-wrapper {
+    aspect-ratio: 4/5;
+  }
+  
+  .hero-gold-frame {
+    top: 1rem;
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+  }
+  
+  .add-to-cart-wrapper {
+    position: static;
+    transform: none;
+    opacity: 1;
+    padding: 0.5rem;
+    background: transparent;
+  }
+  .product-card .btn-primary {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+  
+  .btn-primary, .btn-outline {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 320px) {
+  /* Extra Small Mobile */
+  .heading-editorial {
+    font-size: 2rem;
+  }
+  .heading-section {
+    font-size: 1.8rem;
+  }
+}

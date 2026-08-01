@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop | Libas E Khas</title>
+  <meta name="description" content="Explore our curated collection of Pakistani fashion.">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  
+  <style>
+    .shop-header {
+      background-color: var(--color-nude);
+      padding: 4rem 0;
+      text-align: center;
+    }
+    .category-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+      overflow-x: auto;
+      padding-bottom: 1rem;
+      /* Hide scrollbar for cleaner look */
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .category-tabs::-webkit-scrollbar {
+      display: none;
+    }
+    @media (max-width: 767px) {
+      .category-tabs {
+        justify-content: center;
+        flex-wrap: wrap;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        gap: 1.5rem;
+      }
+    }
+    .category-tab {
+      white-space: nowrap;
+      background: none;
+      border: none;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-warm-gray);
+      padding: 0 0 0.3rem 0;
+      position: relative;
+    }
+    .category-tab::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background-color: var(--color-accent-green);
+      transition: width var(--transition-fast);
+    }
+    .category-tab:hover, .category-tab.active {
+      color: var(--color-dark);
+      font-weight: 500;
+    }
+    .category-tab.active::after {
+      width: 100%;
+    }
+    .sidebar-heading {
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-dark);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .sidebar-list {
+      list-style: none;
+      padding: 0;
+    }
+    .sidebar-list li {
+      margin-bottom: 0.5rem;
+    }
+    .sidebar-list a {
+      color: var(--color-warm-gray);
+      font-size: 0.95rem;
+    }
+    .sidebar-list a:hover {
+      color: var(--color-accent-green);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    Elegance Crafted for Your Most Beautiful Moments
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid px-4 px-lg-5">
+        
+        <!-- Mobile Toggle -->
+        <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Logo -->
+        <a class="navbar-brand" href="index.html">
+          <img src="assets/images/logo.png" alt="Libas E Khas">
+        </a>
+
+        <!-- Desktop Navigation & Mobile Offcanvas -->
+        <div class="offcanvas-lg offcanvas-start flex-grow-1" tabindex="-1" id="navbarMain" aria-labelledby="navbarMainLabel">
+          <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title" id="navbarMainLabel" style="font-family: var(--font-heading);">Menu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#navbarMain" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-center gap-4">
+            <li class="nav-item">
+              <a class="nav-link px-3 active" href="shop.html">Shop</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link px-3 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Bridal Wear
+              </a>
+              <ul class="dropdown-menu border-0 rounded-0 shadow-sm">
+                <li><a class="dropdown-item" href="shop.html">Walima Maxis</a></li>
+                <li><a class="dropdown-item" href="shop.html">Lehnga</a></li>
+                <li><a class="dropdown-item" href="shop.html">Adda / Dabka</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link px-3 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Party Wear
+              </a>
+              <ul class="dropdown-menu border-0 rounded-0 shadow-sm">
+                <li><a class="dropdown-item" href="shop.html">Fancy Shararas</a></li>
+                <li><a class="dropdown-item" href="shop.html">Ghararas</a></li>
+                <li><a class="dropdown-item" href="shop.html">Silk Shirts</a></li>
+                <li><a class="dropdown-item" href="shop.html">Lawn Suits</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-3" href="shop.html">Khuda Baksh Collection</a>
+            </li>
+            <li class="nav-item d-lg-none mt-3">
+              <a class="nav-link" href="about.html">About Us</a>
+            </li>
+            <li class="nav-item d-lg-none">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item d-lg-none mt-2 border-top pt-2" style="border-color: #eaeaea !important;">
+              <a class="nav-link d-flex align-items-center gap-2" href="#">
+                <i class="far fa-user"></i> My Profile
+              </a>
+            </li>
+            <li class="nav-item d-lg-none">
+              <a class="nav-link d-flex align-items-center gap-2" href="#">
+                <i class="far fa-heart"></i> Wishlist
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Right Icons -->
+      <div class="nav-icons d-flex align-items-center">
+        <button class="btn btn-link text-decoration-none">
+            <i class="fas fa-search"></i>
+          </button>
+          <a href="#" class="btn btn-link text-decoration-none d-none d-md-inline-block">
+            <i class="far fa-user"></i>
+          </a>
+          <button class="btn btn-link text-decoration-none d-none d-md-inline-block">
+            <i class="far fa-heart"></i>
+          </button>
+          <button class="btn btn-link text-decoration-none position-relative" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas">
+            <i class="fas fa-shopping-bag"></i>
+            <span class="cart-count">0</span>
+          </button>
+        </div>
+        
+      </div>
+    </nav>
+  </header>
+
+  <div class="shop-header">
+    <div class="container fade-up">
+      <h1 class="heading-editorial">Shop Collection</h1>
+      <p>Explore our curated collection of Pakistani fashion.</p>
+      
+      <div class="category-tabs mt-4">
+        <button class="category-tab active" data-category="All" onclick="filterByCategory('All')">All</button>
+        <button class="category-tab" data-category="Bridal Wear" onclick="filterByCategory('Bridal Wear')">Bridal Wear</button>
+        <button class="category-tab" data-category="Party Wear" onclick="filterByCategory('Party Wear')">Party Wear</button>
+        <button class="category-tab" data-category="Khuda Baksh" onclick="filterByCategory('Khuda Baksh')">Khuda Baksh</button>
+      </div>
+    </div>
+  </div>
+
+  <section class="py-5 bg-ivory">
+    <div class="container-fluid px-4 px-lg-5">
+      
+      <div class="row">
+        <!-- Desktop Sidebar -->
+        <div class="col-lg-3 d-none d-lg-block pe-5">
+          
+          <!-- Search Box -->
+          <div class="mb-5">
+            <h4 class="sidebar-heading mb-2" style="font-family: var(--font-heading); font-size: 1.7rem; text-transform: none; letter-spacing: normal;">Search</h4>
+            <div class="border-bottom mb-4" style="border-color: #eaeaea !important;"></div>
+            <form class="d-flex" onsubmit="event.preventDefault(); executeSearch();">
+              <input type="text" id="shopSearchInput" class="form-control rounded-0 border-dark border-end-0" placeholder="Search products..." style="box-shadow: none; font-family: var(--font-body); font-size: 1.1rem; padding: 0.75rem 1rem;">
+              <button class="btn rounded-0 text-white d-flex align-items-center justify-content-center" type="submit" style="background-color: #212529; border: 1px solid #212529; width: 60px;">
+                <i class="fas fa-search fs-5"></i>
+              </button>
+            </form>
+          </div>
+
+          <div class="mb-5">
+            <h4 class="sidebar-heading">Bridal Wear</h4>
+            <ul class="sidebar-list">
+              <li><a href="#" onclick="event.preventDefault(); filterByCategory('Bridal Wear')">Walima Maxis</a></li>
+              <li><a href="#" onclick="event.preventDefault(); filterByCategory('Bridal Wear')">Lehnga</a></li>
+              <li><a href="#" onclick="event.preventDefault(); filterByCategory('Bridal Wear')">Adda / Dabka</a></li>
+            </ul>
+          </div>
+          <div class="mb-5">
+            <h4 class="sidebar-heading">Party Wear</h4>
+            <ul class="sidebar-list">
+              <li><a href="#" onclick="event.preventDefault(); filterByCategory('Party Wear')">Fancy Shararas</a></li>
+              <li><a href="#" onclick="event.preventDefault(); filterByCategory('Party Wear')">Ghararas</a></li>
+              <li><a href="#" onclick="event.preventDefault(); filterByCategory('Party Wear')">Silk Shirts</a></li>
+              <li><a href="#" onclick="event.preventDefault(); filterByCategory('Party Wear')">Lawn Suits</a></li>
+            </ul>
+          </div>
+          <!-- Price Filter -->
+          <div class="mb-5">
+            <h4 class="sidebar-heading mb-2" style="font-family: var(--font-heading); font-size: 1.7rem; text-transform: none; letter-spacing: normal;">Price Filter</h4>
+            <div class="border-bottom mb-4" style="border-color: #eaeaea !important;"></div>
+            
+            <form id="priceFilterForm" onsubmit="event.preventDefault(); applyPriceFilter();">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <input type="number" id="minPriceInput" class="form-control rounded-0 px-2" placeholder="Min" style="width: 45%; box-shadow: none; border-color: #8C8C8C; font-family: var(--font-body); padding: 0.5rem; font-size: 1rem;">
+                <span class="mx-1" style="color: #212529; font-weight: 500;">-</span>
+                <input type="number" id="maxPriceInput" class="form-control rounded-0 px-2" placeholder="Max" style="width: 45%; box-shadow: none; border-color: #8C8C8C; font-family: var(--font-body); padding: 0.5rem; font-size: 1rem;">
+              </div>
+              <button type="submit" class="btn w-100" style="background-color: #fff; border: 1px solid #212529; color: #212529; font-family: var(--font-body); font-size: 1rem; padding: 0.5rem; border-radius: 4px; transition: all 0.2s ease;" onmouseover="this.style.backgroundColor='#212529'; this.style.color='#fff';" onmouseout="this.style.backgroundColor='#fff'; this.style.color='#212529';">
+                Apply Filter
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="col-lg-9">
+          <div class="d-flex justify-content-between align-items-center mb-3 pb-3 border-bottom" style="font-size: 0.95rem; color: #555; border-color: #eaeaea !important;">
+            <!-- Mobile Filter Trigger -->
+            <button class="btn border border-dark bg-white d-lg-none rounded-0 px-3 py-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#filterOffcanvas" style="font-family: var(--font-body); color: #333;">
+              <i class="fas fa-filter me-1"></i> Filter
+            </button>
+            <div class="d-flex align-items-center gap-2 ms-auto">
+              <select class="form-select border border-dark rounded-0 px-3 py-2" id="sort-dropdown" onchange="handleSort(this.value)" style="box-shadow: none; font-size: 0.95rem; min-width: 220px; font-family: var(--font-body); color: #333;">
+                <option value="featured" selected>Default Sorting</option>
+                <option value="new">Newest</option>
+                <option value="low">Price: Low to High</option>
+                <option value="high">Price: High to Low</option>
+              </select>
+            </div>
+          </div>
+          
+          <!-- Mobile Search Box (Next Row) -->
+          <div class="d-lg-none mb-4 pb-3 border-bottom" style="border-color: #eaeaea !important;">
+            <form class="d-flex" onsubmit="event.preventDefault(); executeSearch('shopSearchInputMobile');">
+              <input type="text" id="shopSearchInputMobile" class="form-control rounded-0 border-dark border-end-0" placeholder="Search products..." style="box-shadow: none; font-family: var(--font-body); padding: 0.5rem 1rem;">
+              <button class="btn rounded-0 text-white d-flex align-items-center justify-content-center" type="submit" style="background-color: #212529; border: 1px solid #212529; width: 50px;">
+                <i class="fas fa-search"></i>
+              </button>
+            </form>
+          </div>
+          <div class="row" id="product-grid">
+            <!-- Products rendered here via shop.js -->
+          </div>
+          <!-- Pagination Container -->
+          <div class="d-flex justify-content-center mt-5">
+            <nav aria-label="Page navigation">
+              <ul class="pagination rounded-0" id="shop-pagination" style="gap: 0.25rem;">
+                <!-- Pagination rendered here -->
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter Offcanvas for Mobile -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="filterOffcanvas">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title heading-section fs-4">Filters</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+      <!-- Same sidebar content for mobile -->
+      <h4 class="sidebar-heading">Categories</h4>
+      <ul class="sidebar-list mb-4">
+        <li><a href="#" onclick="filterByCategory('All'); bootstrap.Offcanvas.getInstance(document.getElementById('filterOffcanvas')).hide()">All Collections</a></li>
+        <li><a href="#" onclick="filterByCategory('Bridal Wear'); bootstrap.Offcanvas.getInstance(document.getElementById('filterOffcanvas')).hide()">Bridal Wear</a></li>
+        <li><a href="#" onclick="filterByCategory('Party Wear'); bootstrap.Offcanvas.getInstance(document.getElementById('filterOffcanvas')).hide()">Party Wear</a></li>
+        <li><a href="#" onclick="filterByCategory('Khuda Baksh'); bootstrap.Offcanvas.getInstance(document.getElementById('filterOffcanvas')).hide()">Khuda Baksh</a></li>
+      </ul>
+
+      <div class="mb-4">
+        <h4 class="sidebar-heading mb-2" style="font-family: var(--font-heading); font-size: 1.7rem; text-transform: none; letter-spacing: normal;">Price Filter</h4>
+        <div class="border-bottom mb-4" style="border-color: #eaeaea !important;"></div>
+        <form id="priceFilterFormMobile" onsubmit="event.preventDefault(); applyPriceFilter('minPriceInputMobile', 'maxPriceInputMobile'); bootstrap.Offcanvas.getInstance(document.getElementById('filterOffcanvas')).hide();">
+          <div class="d-flex align-items-center justify-content-between mb-3">
+            <input type="number" id="minPriceInputMobile" class="form-control rounded-0 px-2" placeholder="Min" style="width: 45%; box-shadow: none; border-color: #8C8C8C; font-family: var(--font-body); padding: 0.5rem; font-size: 1rem;">
+            <span class="mx-1" style="color: #212529; font-weight: 500;">-</span>
+            <input type="number" id="maxPriceInputMobile" class="form-control rounded-0 px-2" placeholder="Max" style="width: 45%; box-shadow: none; border-color: #8C8C8C; font-family: var(--font-body); padding: 0.5rem; font-size: 1rem;">
+          </div>
+          <button type="submit" class="btn w-100" style="background-color: #212529; border: 1px solid #212529; color: #fff; font-family: var(--font-body); font-size: 1rem; padding: 0.5rem; border-radius: 4px;">
+            Apply Filter
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick View Modal -->
+  <div class="modal fade" id="quickViewModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content border-0 rounded-0">
+        <div class="modal-body p-0 position-relative">
+          <button type="button" class="btn-close position-absolute top-0 end-0 m-3 z-3" data-bs-dismiss="modal" aria-label="Close"></button>
+          <div class="row g-0">
+            <div class="col-md-6">
+              <img src="" id="qv-img" class="img-fluid w-100 h-100 object-fit-cover" alt="Product" style="min-height: 400px;">
+            </div>
+            <div class="col-md-6 d-flex align-items-center">
+              <div class="p-4 p-lg-5 w-100 text-center text-md-start">
+                <span class="label-small" id="qv-category">Category</span>
+                <h2 class="heading-section fs-3 mb-3 mt-2" id="qv-title">Product Name</h2>
+                <div class="fs-5 mb-4" id="qv-price" style="font-weight: 500;">PKR 0</div>
+                <p class="text-muted mb-4" style="font-size: 0.9rem;">Experience luxury craftsmanship with this stunning piece, carefully tailored to perfection with delicate details.</p>
+                
+                <div class="row g-3 mb-4">
+                  <div class="col-6">
+                    <select class="form-select rounded-0" id="qv-size">
+                      <option selected>Select Size</option>
+                      <option value="s">Small</option>
+                      <option value="m">Medium</option>
+                      <option value="l">Large</option>
+                    </select>
+                  </div>
+                  <div class="col-6">
+                    <input type="number" class="form-control rounded-0" id="qv-qty" value="1" min="1">
+                  </div>
+                </div>
+                
+                <button class="btn btn-primary w-100 py-3 mb-3" id="qv-add-to-cart">Add to Cart</button>
+                <button class="btn btn-outline-dark w-100 py-2 border-0" style="font-family: var(--font-body); text-transform: uppercase; font-size: 0.8rem; font-weight: 500;">
+                  <i class="far fa-heart me-2"></i> Add to Wishlist
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart Offcanvas -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="cartOffcanvas">
+    <div class="offcanvas-header border-bottom border-light">
+      <h5 class="offcanvas-title" style="font-family: var(--font-heading);">Your Bag</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column" style="background-color: var(--color-ivory);">
+      <div id="cart-items" class="flex-grow-1 overflow-auto pe-2"></div>
+      <div class="cart-footer mt-4 border-top pt-3">
+        <div class="d-flex justify-content-between mb-3">
+          <span class="font-weight-bold" style="font-family: var(--font-body); font-weight: 500;">Subtotal</span>
+          <span id="cart-subtotal" class="font-weight-bold">PKR 0</span>
+        </div>
+        <a href="checkout.html" class="btn btn-primary w-100 py-3">Proceed to Checkout</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 pe-lg-5 text-center text-md-start">
+          <img src="assets/images/logo.png" alt="Libas E Khas" class="mb-3" style="max-width: 150px;">
+          <p class="">Luxury Pakistani fashion, crafted with heritage and presented with modern elegance.</p>
+        </div>
+        <div class="col-lg-2 col-md-6 mb-4 mb-lg-0 text-center text-md-start">
+          <h5>Shop</h5>
+          <ul>
+            <li><a href="shop.html">Bridal Wear</a></li>
+            <li><a href="shop.html">Party Wear</a></li>
+            <li><a href="shop.html">Khuda Baksh</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 text-center text-md-start">
+          <h5>Customer Care</h5>
+          <ul>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="#">Shipping Information</a></li>
+            <li><a href="#">Returns & Exchange</a></li>
+            <li><a href="#">Size Guide</a></li>
+            <li><a href="#">FAQs</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-6 text-center text-md-start">
+          <h5>Stay in the know.</h5>
+          <p>Be the first to discover new collections, exclusive pieces, and special announcements.</p>
+          <form class="newsletter-form d-flex mt-3">
+            <input type="email" class="form-control" placeholder="Enter your email" required>
+            <button class="btn btn-primary" type="submit">Subscribe</button>
+          </form>
+          <div class="mt-4 d-flex justify-content-center justify-content-md-start gap-4">
+            <a href="#" class="text-white social-icon"><i class="fab fa-instagram fs-4"></i></a>
+            <a href="#" class="text-white social-icon"><i class="fab fa-facebook fs-4"></i></a>
+            <a href="#" class="text-white social-icon"><i class="fab fa-whatsapp fs-4"></i></a>
+            <a href="#" class="text-white social-icon"><i class="fa-brands fa-tiktok fs-4"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 Libas E Khas. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/shop.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

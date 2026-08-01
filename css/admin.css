@@ -1,0 +1,184 @@
+/* LIBAS E KHAS - ADMIN STYLESHEET */
+
+/* Import Main Variables */
+@import url('style.css');
+
+body {
+    background-color: #f8f9fa; /* Slightly cooler background for admin */
+}
+
+/*  Sidebar  */
+.admin-sidebar {
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: var(--color-white);
+    color: var(--color-dark);
+    border-right: 1px solid rgba(0,0,0,0.05);
+    transition: var(--transition-fast);
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.admin-sidebar .sidebar-header {
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.admin-sidebar .sidebar-header h3 {
+    color: var(--color-gold);
+    font-family: var(--font-heading);
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+.admin-sidebar ul.components {
+    padding: 20px 0;
+}
+
+.admin-sidebar ul p {
+    color: var(--color-warm-gray);
+    padding: 10px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.admin-sidebar ul li a {
+    padding: 12px 20px;
+    font-size: 1rem;
+    display: block;
+    color: var(--color-dark);
+    transition: var(--transition-fast);
+}
+
+.admin-sidebar ul li a i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+    color: var(--color-gold);
+}
+
+.admin-sidebar ul li a:hover,
+.admin-sidebar ul li.active > a {
+    color: var(--color-dark);
+    background: var(--color-gold);
+}
+
+.admin-sidebar ul li a:hover i,
+.admin-sidebar ul li.active > a i {
+    color: var(--color-dark);
+}
+
+/*  Main Content  */
+.admin-content {
+    width: calc(100% - 250px);
+    margin-left: 250px;
+    min-height: 100vh;
+    transition: var(--transition-fast);
+}
+
+/*  Topbar  */
+.admin-topbar {
+    background: var(--color-white);
+    padding: 15px 30px;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sidebar-collapse {
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--color-dark);
+    cursor: pointer;
+}
+
+.admin-profile {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.admin-profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--color-gold);
+}
+
+/*  Dashboard Cards  */
+.admin-card {
+    background: var(--color-white);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 30px;
+    border: none;
+    border-left: 4px solid var(--color-gold);
+    transition: var(--transition-fast);
+}
+
+.admin-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    color: rgba(197, 160, 89, 0.2); /* Faded gold */
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+/*  DataTables Overrides  */
+.table-responsive {
+    background: var(--color-white);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: var(--shadow-sm);
+}
+
+table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before, 
+table.dataTable.dtr-inline.collapsed>tbody>tr>th.dtr-control:before {
+    background-color: var(--color-gold) !important;
+}
+
+.page-item.active .page-link {
+    background-color: var(--color-dark);
+    border-color: var(--color-dark);
+}
+
+.page-link {
+    color: var(--color-dark);
+}
+
+/*  Status Badges  */
+.badge-pending { background-color: #ffc107; color: #000; }
+.badge-processing { background-color: #17a2b8; color: #fff; }
+.badge-completed { background-color: #28a745; color: #fff; }
+.badge-cancelled { background-color: #dc3545; color: #fff; }
+
+/*  Responsive Admin  */
+@media (max-width: 768px) {
+    .admin-sidebar {
+        margin-left: -250px;
+    }
+    .admin-sidebar.active {
+        margin-left: 0;
+    }
+    .admin-content {
+        width: 100%;
+        margin-left: 0;
+    }
+    .admin-content.active {
+        margin-left: 0; /* Or overlay */
+    }
+}
