@@ -48,9 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
             <img src="${product.image}" alt="${product.name}" class="product-img-main">
             <div class="product-img-overlay"></div>
             <div class="product-card-actions">
-              <button class="action-btn" data-tooltip="Add to Wishlist" onclick="event.stopPropagation(); toggleWishlist(event, ${product.id})">
-                <i class="far fa-heart"></i>
-              </button>
               <button class="action-btn" data-tooltip="Add to Cart" onclick="event.stopPropagation(); addToCart(${product.id})">
                 <i class="fas fa-shopping-bag"></i>
               </button>
