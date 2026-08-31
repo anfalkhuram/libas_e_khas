@@ -64,4 +64,21 @@ $(document).ready(function() {
             }
         });
     }
+
+    // Initialize Summernote Rich Text Editor if element exists
+    if ($('#summernote').length > 0 && $.fn.summernote) {
+        $('#summernote').summernote({
+            placeholder: 'Enter product description...',
+            tabsize: 2,
+            height: 200,
+            toolbar: [
+                ['style', ['style']],
+                ['font', ['bold', 'underline', 'clear']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['view', ['fullscreen', 'codeview', 'help']]
+            ]
+        });
+    }
 });
+

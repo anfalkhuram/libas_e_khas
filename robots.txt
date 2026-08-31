@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+Disallow: /admin/
+Disallow: /ajax/
+Disallow: /inc/
+Disallow: /sql/
+
+# Assuming HTTPS and current domain structure, modify if deployment domain differs.
+Sitemap: /sitemap.xml
